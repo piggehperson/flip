@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.piggeh.flipnew.R;
 import com.piggeh.flipnew.classes.BottomNavigationViewHelper;
@@ -31,5 +32,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction testTransaction = getSupportFragmentManager().beginTransaction();
         testTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
         testTransaction.commit();
+    }
+
+    private void onFABClick(View view){
+
     }
 }
