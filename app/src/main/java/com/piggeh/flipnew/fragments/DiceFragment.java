@@ -7,8 +7,13 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.piggeh.flipnew.R;
+
+import org.w3c.dom.Text;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,9 +29,7 @@ public class DiceFragment extends android.support.v4.app.Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private TextView resultDisplay;
 
     private OnFragmentInteractionListener mListener;
 
@@ -56,8 +59,7 @@ public class DiceFragment extends android.support.v4.app.Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -65,14 +67,15 @@ public class DiceFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dice, container, false);
+        View view = inflater.inflate(R.layout.fragment_dice, container, false);
+        resultDisplay = (TextView) view.findViewById(R.id.dice_result_display);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    public void onButtonPressed() {
+        int diceNumber = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        resultDisplay.setText(Integer.toString(diceNumber));
     }
 
     @Override

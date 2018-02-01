@@ -27,14 +27,23 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.frame_toolbar));
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.frame_bottomNav);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        frameFab = findViewById(R.id.frame_floating_action_button);
+        frameFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onFABClick();
+            }
+        });
 
-        //set fragment into frame
-        FragmentTransaction testTransaction = getSupportFragmentManager().beginTransaction();
-        testTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
-        testTransaction.commit();
+        if (savedInstanceState == null){
+            //set fragment into frame
+            FragmentTransaction testTransaction = getSupportFragmentManager().beginTransaction();
+            testTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
+            testTransaction.commit();
+        }
     }
 
-    private void onFABClick(View view){
-
+    private void onFABClick(){
+        ((DiceFragment) getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container)).onButtonPressed();
     }
 }
