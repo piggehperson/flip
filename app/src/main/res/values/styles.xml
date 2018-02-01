@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:statusBarColor">@color/colorBackgroundDark</item>
+        <!--No light status bar below 8.1 :(-->
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+</resources>
