@@ -22,16 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.30"
-        android:padding="16dp"/>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="@id/dice_result_display"
-        app:layout_constraintEnd_toEndOf="@id/dice_result_display"
-        app:layout_constraintTop_toTopOf="@id/dice_result_display"
-        app:layout_constraintBottom_toBottomOf="@id/dice_result_display"
-        android:id="@+id/dice_burst_container"
+        android:padding="16dp"
         android:background="@drawable/drawable_ripple_burst"/>
 
 

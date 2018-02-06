@@ -30,7 +30,6 @@ public class DiceFragment extends android.support.v4.app.Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private TextView resultDisplay;
-    private View burstContainer;
 
     private OnFragmentInteractionListener mListener;
 
@@ -70,7 +69,6 @@ public class DiceFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dice, container, false);
         resultDisplay = (TextView) view.findViewById(R.id.dice_result_display);
-        burstContainer = view.findViewById(R.id.dice_burst_container);
         return view;
     }
 
@@ -78,11 +76,11 @@ public class DiceFragment extends android.support.v4.app.Fragment {
         int diceNumber = ThreadLocalRandom.current().nextInt(1, 6 + 1);
         resultDisplay.setText(Integer.toString(diceNumber));
         //try to show ripple effect around number
-        burstContainer.dispatchDrawableHotspotChanged(
-                burstContainer.getWidth() / 2,
-                burstContainer.getHeight() / 2);
-        burstContainer.setPressed(true);
-        burstContainer.setPressed(false);
+        resultDisplay.dispatchDrawableHotspotChanged(
+                resultDisplay.getWidth() / 2,
+                resultDisplay.getHeight() / 2);
+        resultDisplay.setPressed(true);
+        resultDisplay.setPressed(false);
     }
 
     @Override
