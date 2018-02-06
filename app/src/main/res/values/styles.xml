@@ -11,7 +11,7 @@
         <!--No light status bar below 8.1 :(-->
         <item name="android:windowBackground">@color/colorBackground</item>
 
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightStatusBar">@bool/bool_light_system_bars</item>
     </style>
 
 </resources>
