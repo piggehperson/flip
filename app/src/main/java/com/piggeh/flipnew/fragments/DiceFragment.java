@@ -69,7 +69,16 @@ public class DiceFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dice, container, false);
         resultDisplay = (TextView) view.findViewById(R.id.dice_result_display);
+        if (savedInstanceState != null){
+            resultDisplay.setText(savedInstanceState.getString("display"));
+        }
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("display", resultDisplay.getText().toString());
     }
 
     public void onButtonPressed() {
