@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import com.piggeh.flipnew.R;
@@ -35,12 +37,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (savedInstanceState == null){
+        if (getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container) == null){
             //set fragment into frame
             FragmentTransaction testTransaction = getSupportFragmentManager().beginTransaction();
             testTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
             testTransaction.commit();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main_activity, menu);
+        return true;
     }
 
     private void onFABClick(){
