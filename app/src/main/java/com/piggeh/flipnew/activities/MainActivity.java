@@ -19,6 +19,7 @@ import com.piggeh.flipnew.fragments.DiceFragment;
 public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton frameFab;
+    private int appMode;/*0 for dice, 1 for coin, 2 for list, 3 for custom dice*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container) == null){
             //set fragment into frame
-            FragmentTransaction testTransaction = getSupportFragmentManager().beginTransaction();
-            testTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
-            testTransaction.commit();
+            switchMode(0);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("appMode", appMode);
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle outState) {
+        super.onRestoreInstanceState(outState);
+        outState.getInt("appMode", 0);
+
     }
 
     @Override
@@ -54,5 +67,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void onFABClick(){
         ((DiceFragment) getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container)).onButtonPressed();
+    }
+
+    private boolean switchMode(int mode){
+        switch (mode){
+            default: return false;
+            case 0:
+                FragmentTransaction diceTransaction = getSupportFragmentManager().beginTransaction();
+                diceTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
+                diceTransaction.commit();
+                appMode = 0;
+
+                return true;
+        }
     }
 }
