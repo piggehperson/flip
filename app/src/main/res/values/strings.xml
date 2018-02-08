@@ -17,4 +17,10 @@
     <string name="coin_result_label">You flipped</string>
     <string name="coin_result_heads">Heads</string>
     <string name="coin_result_tails">Tails</string>
+
+    <!--Settings strings-->
+    <string name="preference_title_theme">Theme</string>
+    <string name="theme_default">Default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
 </resources>
