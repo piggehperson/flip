@@ -106,4 +106,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        switch (menuItem.getItemId()){
+            default: return false;
+            case R.id.menu_settings:
+
+                return true;
+        }
+    }
 }
