@@ -16,6 +16,8 @@ import android.view.View;
 
 import com.piggeh.flipnew.R;
 import com.piggeh.flipnew.classes.BottomNavigationViewHelper;
+import com.piggeh.flipnew.fragments.ButtonFragment;
+import com.piggeh.flipnew.fragments.CoinFragment;
 import com.piggeh.flipnew.fragments.DiceFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onFABClick(){
-        ((DiceFragment) getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container)).onButtonPressed();
+        ((ButtonFragment) getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container)).onButtonPressed();
     }
 
     private boolean switchMode(int mode){
@@ -95,7 +97,12 @@ public class MainActivity extends AppCompatActivity {
                 diceTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
                 diceTransaction.commit();
                 appMode = 0;
-
+                return true;
+            case 1:
+                FragmentTransaction coinTransaction = getSupportFragmentManager().beginTransaction();
+                coinTransaction.replace(R.id.frame_fragment_container, ((Fragment) new CoinFragment()));
+                coinTransaction.commit();
+                appMode = 1;
                 return true;
         }
     }

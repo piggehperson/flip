@@ -23,36 +23,14 @@ import java.util.concurrent.ThreadLocalRandom;
  * Use the {@link DiceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DiceFragment extends ButtonFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class CoinFragment extends ButtonFragment {
 
     private TextView resultDisplay;
 
     private OnFragmentInteractionListener mListener;
 
-    public DiceFragment() {
+    public CoinFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DiceFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DiceFragment newInstance(String param1, String param2) {
-        DiceFragment fragment = new DiceFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -67,8 +45,8 @@ public class DiceFragment extends ButtonFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_dice, container, false);
-        resultDisplay = (TextView) view.findViewById(R.id.dice_result_display);
+        View view = inflater.inflate(R.layout.fragment_coin, container, false);
+        resultDisplay = (TextView) view.findViewById(R.id.coin_result_display);
         if (savedInstanceState != null){
             resultDisplay.setText(savedInstanceState.getString("display"));
         }
@@ -82,8 +60,15 @@ public class DiceFragment extends ButtonFragment {
     }
 
     public void onButtonPressed() {
-        int diceNumber = ThreadLocalRandom.current().nextInt(1, 6 + 1);
-        resultDisplay.setText(Integer.toString(diceNumber));
+        int diceNumber = ThreadLocalRandom.current().nextInt(1, 2 + 1);
+        switch (diceNumber){
+            default: resultDisplay.setText("Error");
+                break;
+            case 1: resultDisplay.setText(R.string.coin_result_heads);
+                break;
+            case 2:resultDisplay.setText(R.string.coin_result_tails);
+            break;
+        }
         //try to show ripple effect around number
         resultDisplay.dispatchDrawableHotspotChanged(
                 resultDisplay.getWidth() / 2,
