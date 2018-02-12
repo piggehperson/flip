@@ -130,7 +130,8 @@ public class MainActivity extends AppCompatActivity {
         switch (menuItem.getItemId()){
             default: return false;
             case R.id.menu_settings:
-
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivityForResult(intent, 0);
                 return true;
         }
     }

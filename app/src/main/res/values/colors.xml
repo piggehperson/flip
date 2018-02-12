@@ -6,4 +6,6 @@
     <color name="colorBackground">#FFFAFAFA</color>
     <color name="colorBackgroundLight">#FFFFFFFF</color>
     <color name="colorBackgroundDark">#FFE0E0E0</color>
+
+    <color name="colorIconDaynight">#FF000000</color>
 </resources>
