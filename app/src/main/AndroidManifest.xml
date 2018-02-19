@@ -17,6 +17,35 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SettingsActivity"></activity>
+
+        <service
+            android:name=".services.TileDieService"
+            android:enabled="true"
+            android:icon="@drawable/ic_dice_5"
+            android:label="@string/tile_dice_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="false" />
+        </service>
+        <service
+            android:name=".services.TileCoinService"
+            android:enabled="true"
+            android:icon="@drawable/ic_coin_head"
+            android:label="@string/tile_coin_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="false" />
+        </service>
     </application>
 
 </manifest>
