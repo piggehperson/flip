@@ -8,4 +8,5 @@
     <color name="colorBackgroundDark">#FFE0E0E0</color>
 
     <color name="colorIconDaynight">#FF000000</color>
+    <color name="colorPrimaryContrasting">@color/colorPrimaryDark</color><!--Primary color that contrasts with the background color-->
 </resources>
