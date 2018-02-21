@@ -30,4 +30,6 @@
 
     <string name="tile_coin_title">Flip a coin</string>
     <string name="tile_coin_result">You flipped %s</string>
+
+
 </resources>

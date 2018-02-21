@@ -22,6 +22,7 @@ import com.piggeh.flipnew.classes.BottomNavigationViewHelper;
 import com.piggeh.flipnew.fragments.ButtonFragment;
 import com.piggeh.flipnew.fragments.CoinFragment;
 import com.piggeh.flipnew.fragments.DiceFragment;
+import com.piggeh.flipnew.fragments.ListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -121,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
                 coinTransaction.replace(R.id.frame_fragment_container, ((Fragment) new CoinFragment()));
                 coinTransaction.commit();
                 appMode = 1;
+                return true;
+            case 2:
+                FragmentTransaction listTransaction = getSupportFragmentManager().beginTransaction();
+                listTransaction.replace(R.id.frame_fragment_container, ((Fragment) new ListFragment()));
+                listTransaction.commit();
+                appMode = 2;
                 return true;
         }
     }
