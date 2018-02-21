@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.piggeh.flipnew.R;
 import com.piggeh.flipnew.classes.BottomNavigationViewHelper;
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivityForResult(intent, 0);
+                return true;
+            case R.id.menu_add:
+                Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
                 return true;
         }
     }

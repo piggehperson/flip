@@ -7,6 +7,7 @@
     <string name="tab_list">List</string>
     <string name="tab_custom_dice">Custom Dice</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_add_item">Settings</string>
 
     <!--Dice fragment strings-->
     <string name="dice_prompt">Touch button to roll a die</string>

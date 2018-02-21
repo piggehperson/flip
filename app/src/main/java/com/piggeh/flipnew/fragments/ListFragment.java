@@ -9,12 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.piggeh.flipnew.R;
 import com.piggeh.flipnew.adapters.ListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +47,12 @@ public class ListFragment extends ButtonFragment {
         listAdapter = new ListAdapter(input);
         recyclerView.setAdapter(listAdapter);
         return view;
+    }
+
+    @Override
+    public void onButtonPressed() {
+        int diceNumber = ThreadLocalRandom.current().nextInt(0, listAdapter.getItemCount());
+        Toast.makeText(getContext(), String.valueOf(diceNumber), Toast.LENGTH_SHORT).show();
     }
 
 }
