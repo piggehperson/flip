@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.piggeh.flipnew">
+    package="com.piggeh.flipnew"><!--TODO: Change package name to com.piggeh.flip-->
+                                    <!--This can wait until the new version is finished, it's useful to have old + new installed in parallel-->
 
     <application
         android:allowBackup="true"
