@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="test item"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,13 +34,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/list_item_delete"
-        android:paddingEnd="0dp"
+        android:paddingEnd="12dp"
         />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorDividers"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
 
 </android.support.constraint.ConstraintLayout>
