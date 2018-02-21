@@ -36,7 +36,7 @@
         android:id="@+id/list_item_delete"
         android:background="@drawable/drawable_ripple_danger"
         android:paddingEnd="12dp"
-        />
+        android:pointerIcon="hand"/>
 
     <View
         android:layout_width="match_parent"
