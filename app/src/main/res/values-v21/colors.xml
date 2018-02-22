@@ -5,7 +5,7 @@
     <color name="colorAccent">#FFC400</color>
     <color name="colorBackground">#FFFAFAFA</color>
     <color name="colorBackgroundLight">#FFFFFFFF</color>
-    <color name="colorBackgroundDark">#FFE0E0E0</color>
+    <color name="colorBackgroundDark">#848484</color>
     <color name="colorDanger">#FF1744</color><!--Nothing here is really 'dangerous', this adds flair to the list delete icon-->
 
     <color name="colorIconDaynight">#FF000000</color>
