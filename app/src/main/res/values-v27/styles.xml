@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:statusBarColor">@color/colorBackgroundDark</item>
-        <item name="android:navigationBarColor">@color/colorBackgroundDark</item>
+        <item name="android:navigationBarColor">@color/colorBackground</item>
         <item name="android:windowBackground">@color/colorBackground</item>
 
         <item name="android:windowLightStatusBar">@bool/bool_light_system_bars</item>

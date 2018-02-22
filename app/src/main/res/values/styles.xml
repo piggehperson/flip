@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:statusBarColor">@color/colorBackgroundDark</item>
+        <!--<item name="android:navigationBarColor">@color/colorBackground</item>-->
         <!--No light status bar below 8.1 :(-->
         <item name="android:windowBackground">@color/colorBackground</item>
 
