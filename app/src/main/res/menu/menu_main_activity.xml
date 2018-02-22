@@ -6,7 +6,8 @@
         android:id="@+id/menu_add"
         android:icon="@drawable/ic_add"
         android:title="@string/menu_add_item"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:visible="false"/>
 
     <item
         android:id="@+id/menu_settings"
