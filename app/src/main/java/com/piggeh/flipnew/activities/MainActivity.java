@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton frameFab;
     private int appMode;/*0 for dice, 1 for coin, 2 for list, 3 for custom dice*/
+    private MenuItem menuAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main_activity, menu);
+        menuAdd = menu.findItem(R.id.menu_add);
         return true;
     }
 
@@ -113,22 +115,26 @@ public class MainActivity extends AppCompatActivity {
         switch (mode){
             default: return false;
             case 0:
+                appMode = 0;
                 FragmentTransaction diceTransaction = getSupportFragmentManager().beginTransaction();
                 diceTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
                 diceTransaction.commit();
-                appMode = 0;
+                invalidateOptionsMenu();
                 return true;
             case 1:
+                appMode = 1;
                 FragmentTransaction coinTransaction = getSupportFragmentManager().beginTransaction();
                 coinTransaction.replace(R.id.frame_fragment_container, ((Fragment) new CoinFragment()));
                 coinTransaction.commit();
-                appMode = 1;
+
+                invalidateOptionsMenu();
                 return true;
             case 2:
+                appMode = 2;
                 FragmentTransaction listTransaction = getSupportFragmentManager().beginTransaction();
                 listTransaction.replace(R.id.frame_fragment_container, ((Fragment) new ListFragment()));
                 listTransaction.commit();
-                appMode = 2;
+                invalidateOptionsMenu();
                 return true;
         }
     }
@@ -145,6 +151,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
                 return true;
         }
+    }
+
+    public boolean onPrepareOptionsMenu(Menu menu)
+    {
+        if (appMode == 2){
+            menu.findItem(R.id.menu_add).setVisible(true);
+        } else{
+            menu.findItem(R.id.menu_add).setVisible(false);
+        }
+
+        return true;
     }
 
     @Override
