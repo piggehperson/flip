@@ -3,6 +3,8 @@ package com.piggeh.flipnew.adapters;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,6 +77,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 remove(holder.getLayoutPosition());
             }
         });
+        if ( (position & 1) == 0 ) { holder.rootLayout.setBackground(new ColorDrawable(Color.parseColor("#11000000"))); } else { holder.rootLayout.setBackground(null); }
 
     }
 

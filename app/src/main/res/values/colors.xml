@@ -11,5 +11,5 @@
     <color name="colorIconDaynight">#FF000000</color>
     <color name="colorPrimaryContrasting">@color/colorPrimaryDark</color><!--Primary color that contrasts with the background color-->
     <color name="colorDividers">#1F000000</color>
-    <color name="colorLightlySalted">#1F000000</color>
+    <color name="colorLightlySalted">#11000000</color>
 </resources>
