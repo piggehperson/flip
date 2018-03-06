@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,11 +26,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         // each data item is just a string in this case
         public TextView label;
         public ImageButton closeButton;
-        public View rootLayout;
+        public CardView rootLayout;
 
         public ViewHolder(View v) {
             super(v);
-            rootLayout = v;
+            rootLayout = (CardView) v;
             label = (TextView) v.findViewById(R.id.list_item_label);
             closeButton = (ImageButton) v.findViewById(R.id.list_item_delete);
         }
@@ -77,7 +78,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 remove(holder.getLayoutPosition());
             }
         });
-        if ( (position & 1) == 0 ) { holder.rootLayout.setBackground(new ColorDrawable(Color.parseColor("#11000000"))); } else { holder.rootLayout.setBackground(null); }
+        if ( (position & 1) == 1 ) { holder.rootLayout.setCardBackgroundColor(Color.parseColor("#11000000")); } else { holder.rootLayout.setCardBackgroundColor(null); }
+        //holder.rootLayout.setRadius(holder.rootLayout.getHeight()/2);
 
     }
 
