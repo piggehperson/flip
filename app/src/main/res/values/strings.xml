@@ -11,6 +11,7 @@
 
     <!--Dice fragment strings-->
     <string name="dice_prompt">Touch button to roll a die</string>
+    <string name="dice_tooltip">Roll</string>
     <string name="dice_result_label">You rolled a</string>
 
     <!--Coin fragment strings-->
