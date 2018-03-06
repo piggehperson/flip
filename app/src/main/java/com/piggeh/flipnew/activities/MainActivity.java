@@ -117,7 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void onFABClick(){
         ((ButtonFragment) getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container)).onButtonPressed();
-        dynamicFab.findViewById(R.id.frame_dynamic_fab_text).setVisibility(View.GONE);
+        dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+        dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+        dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
         dynamicFab.findViewById(R.id.frame_dynamic_fab_icon).setVisibility(View.VISIBLE);
     }
 
@@ -129,8 +131,9 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction diceTransaction = getSupportFragmentManager().beginTransaction();
                 diceTransaction.replace(R.id.frame_fragment_container, ((Fragment) new DiceFragment()));
                 diceTransaction.commit();
-                ((TextView) dynamicFab.findViewById(R.id.frame_dynamic_fab_text)).setText(R.string.dice_tooltip);
-                dynamicFab.findViewById(R.id.frame_dynamic_fab_text).setVisibility(View.VISIBLE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.VISIBLE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
                 invalidateOptionsMenu();
                 return true;
             case 1:
@@ -138,8 +141,9 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction coinTransaction = getSupportFragmentManager().beginTransaction();
                 coinTransaction.replace(R.id.frame_fragment_container, ((Fragment) new CoinFragment()));
                 coinTransaction.commit();
-                ((TextView) dynamicFab.findViewById(R.id.frame_dynamic_fab_text)).setText(R.string.coin_tooltip);
-                dynamicFab.findViewById(R.id.frame_dynamic_fab_text).setVisibility(View.VISIBLE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.VISIBLE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
                 invalidateOptionsMenu();
                 return true;
             case 2:
@@ -147,8 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction listTransaction = getSupportFragmentManager().beginTransaction();
                 listTransaction.replace(R.id.frame_fragment_container, ((Fragment) new ListFragment()));
                 listTransaction.commit();
-                ((TextView) dynamicFab.findViewById(R.id.frame_dynamic_fab_text)).setText(R.string.list_tooltip);
-                dynamicFab.findViewById(R.id.frame_dynamic_fab_text).setVisibility(View.VISIBLE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+                dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.VISIBLE);
                 invalidateOptionsMenu();
                 return true;
         }
