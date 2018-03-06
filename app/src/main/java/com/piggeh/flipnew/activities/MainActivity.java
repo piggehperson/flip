@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +28,7 @@ import com.piggeh.flipnew.fragments.ListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FloatingActionButton frameFab;
+    private CardView dynamicFab;
     private int appMode;/*0 for dice, 1 for coin, 2 for list, 3 for custom dice*/
     private MenuItem menuAdd;
 
@@ -71,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        frameFab = findViewById(R.id.frame_floating_action_button);
-        frameFab.setOnClickListener(new View.OnClickListener() {
+
+        dynamicFab = findViewById(R.id.frame_dynamic_fab);
+        dynamicFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onFABClick();
@@ -136,6 +138,14 @@ public class MainActivity extends AppCompatActivity {
                 listTransaction.commit();
                 invalidateOptionsMenu();
                 return true;
+        }
+    }
+
+    private static final int STATE_RECT = 0;
+    private static final int STATE_ROUND = 0;
+    public void setFabState(int state){
+        switch (state){
+
         }
     }
 
