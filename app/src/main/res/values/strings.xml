@@ -16,9 +16,15 @@
 
     <!--Coin fragment strings-->
     <string name="coin_prompt">Touch button to flip a coin</string>
+    <string name="coin_tooltip">Flip</string>
     <string name="coin_result_label">You flipped</string>
     <string name="coin_result_heads">Heads</string>
     <string name="coin_result_tails">Tails</string>
+
+    <!--List fragment strings-->
+    <string name="list_add_prompt_title">There\'s nothing here</string>
+    <string name="list_add_prompt_body">Try adding some items with +</string>
+    <string name="list_tooltip">Pick</string>
 
     <!--Settings strings-->
     <string name="preference_title_theme">Theme</string>
