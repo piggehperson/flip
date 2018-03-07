@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="28dp"
-        app:cardElevation="4dp"
+        app:cardElevation="6dp"
         app:cardMaxElevation="12dp"
         android:pointerIcon="hand">
 
@@ -46,7 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:animateLayoutChanges="true"
-            android:background="?selectableItemBackground">
+            android:background="?selectableItemBackground"
+            android:id="@+id/frame_dynamic_fab_container">
             <ImageView
                 android:layout_width="56dp"
                 android:layout_height="56dp"
@@ -57,36 +58,12 @@
                 android:id="@+id/frame_dynamic_fab_icon"/>
 
             <TextView
-                android:id="@+id/frame_dynamic_fab_text_dice"
+                android:id="@+id/frame_dynamic_fab_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="16dp"
                 android:text="@string/dice_tooltip"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/frame_dynamic_fab_text_coin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                android:text="@string/coin_tooltip"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/frame_dynamic_fab_text_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="16dp"
-                android:text="@string/list_tooltip"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:textColor="#000"
                 android:textStyle="bold"
