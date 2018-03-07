@@ -97,14 +97,39 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("appMode", appMode);
-
+        if (dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).getVisibility() == View.VISIBLE
+                || dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).getVisibility() == View.VISIBLE
+                || dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).getVisibility() == View.VISIBLE){
+            outState.putBoolean("isFabCollapsed", false);
+        } else {
+            outState.putBoolean("isFabCollapsed", true);
+        }
     }
 
     @Override
     public void onRestoreInstanceState(Bundle outState) {
         super.onRestoreInstanceState(outState);
-        outState.getInt("appMode", 0);
-
+        appMode = outState.getInt("appMode", 0);
+        if (outState.getBoolean("isFabCollapsed", false)){
+            dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+            dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+            dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
+        } else{
+            switch(appMode){
+                default: dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.VISIBLE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
+                    break;
+                case 1: dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.VISIBLE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
+                    break;
+                case 2: dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
+                    dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.VISIBLE);
+            }
+        }
+        invalidateOptionsMenu();
     }
 
     @Override
