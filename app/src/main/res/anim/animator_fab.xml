@@ -9,13 +9,6 @@
                 android:valueTo="12"
                 android:valueType="floatType" />
         </item>
-        <item android:state_selected="true" >
-            <objectAnimator
-                android:duration="100"
-                android:propertyName="cardElevation"
-                android:valueTo="9"
-                android:valueType="floatType" />
-        </item>
         <item android:state_hovered="true" >
             <objectAnimator
                 android:duration="100"
