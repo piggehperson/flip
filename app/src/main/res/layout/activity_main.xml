@@ -40,7 +40,8 @@
         app:cardCornerRadius="28dp"
         app:cardElevation="6dp"
         app:cardMaxElevation="12dp"
-        android:pointerIcon="hand">
+        android:pointerIcon="hand"
+        android:stateListAnimator="@anim/animator_fab">
 
         <LinearLayout
             android:layout_width="wrap_content"

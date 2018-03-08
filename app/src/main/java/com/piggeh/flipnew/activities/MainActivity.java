@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 onFABClick();
             }
         });
-        ((ViewGroup) dynamicFab).getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
+        //((ViewGroup) dynamicFab).getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
 
         if (getSupportFragmentManager().findFragmentById(R.id.frame_fragment_container) == null){
             //set fragment into frame
