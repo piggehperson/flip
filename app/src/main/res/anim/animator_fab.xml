@@ -6,21 +6,14 @@
             <objectAnimator
                 android:duration="100"
                 android:propertyName="cardElevation"
-                android:valueTo="12"
-                android:valueType="floatType" />
-        </item>
-        <item android:state_hovered="true" >
-            <objectAnimator
-                android:duration="100"
-                android:propertyName="cardElevation"
-                android:valueTo="9"
+                android:valueTo="24"
                 android:valueType="floatType" />
         </item>
         <item >
             <objectAnimator
                 android:duration="100"
                 android:propertyName="cardElevation"
-                android:valueTo="6"
+                android:valueTo="12"
                 android:valueType="floatType" />
         </item>
 
