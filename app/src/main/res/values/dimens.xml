@@ -2,4 +2,7 @@
 <resources>
     <dimen name="text_size_header_large">48sp</dimen>
     <dimen name="text_size_header_medium">24sp</dimen>
+
+    <dimen name="fab_elevation_resting">6dp</dimen>
+    <dimen name="fab_elevation_pressed">12dp</dimen>
 </resources>
