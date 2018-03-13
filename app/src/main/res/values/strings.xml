@@ -25,6 +25,7 @@
     <string name="list_add_prompt_title">There\'s nothing here</string>
     <string name="list_add_prompt_body">Try adding some items with +</string>
     <string name="list_tooltip">Pick</string>
+    <string name="list_result_label">You picked</string>
 
     <!--Settings strings-->
     <string name="preference_title_theme">Theme</string>
