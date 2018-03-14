@@ -19,10 +19,6 @@
         android:layout_height="match_parent"
         android:id="@+id/frame_settings"
         android:layout_below="@id/toolbar_settings"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorNavbarDivider"
-        android:layout_alignParentBottom="true"/>
+
 
 </RelativeLayout>
