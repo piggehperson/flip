@@ -6,7 +6,7 @@
     <color name="colorBackground">#FFFAFAFA</color>
     <color name="colorBackgroundLight">#FFFFFFFF</color>
     <color name="colorBackgroundDark">#848484</color>
-    <color name="colorDanger">#F44336</color><!--Nothing here is really 'dangerous', this adds flair to the list delete icon-->
+    <color name="colorDanger">#FF0000</color><!--Nothing here is really 'dangerous', this adds flair to the list delete icon-->
 
     <color name="colorIconDaynight">#FF000000</color>
     <color name="colorPrimaryContrasting">@color/colorPrimaryDark</color><!--Primary color that contrasts with the background color-->
