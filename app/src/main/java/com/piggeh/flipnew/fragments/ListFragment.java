@@ -3,6 +3,7 @@ package com.piggeh.flipnew.fragments;
 
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -42,7 +43,7 @@ public class ListFragment extends ButtonFragment {
         recyclerView.setLayoutManager(layoutManager);
         List<String> input = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
+            input.add("Long long text test long long text test long long text test long long text test long long text test long long text test long long text test " + i);
         }// define an adapter
         listAdapter = new ListAdapter(input);
         recyclerView.setAdapter(listAdapter);
@@ -53,6 +54,7 @@ public class ListFragment extends ButtonFragment {
     public void onButtonPressed() {
         int diceNumber = ThreadLocalRandom.current().nextInt(0, listAdapter.getItemCount());
         Toast.makeText(getContext(), String.valueOf(diceNumber), Toast.LENGTH_SHORT).show();
+        recyclerView.smoothScrollToPosition(diceNumber);
     }
 
 }
