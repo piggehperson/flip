@@ -8,21 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:statusBarColor">@color/colorBackgroundDark</item>
-        <!--<item name="android:navigationBarColor">@color/colorBackground</item>-->
-        <!--No light navigation bar below 8.1 :(-->
         <item name="android:windowBackground">@color/colorBackground</item>
 
         <item name="android:windowLightStatusBar">@bool/bool_light_system_bars</item>
-    </style>
-
-    <style name="ClickableIcon">
-        <item name="android:background">?selectableItemBackgroundBorderless</item>
-        <item name="android:paddingStart">12dp</item>
-        <item name="android:paddingEnd">12dp</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:paddingBottom">12dp</item>
-        <item name="android:layout_width">48dp</item>
-        <item name="android:layout_height">48dp</item>
     </style>
 
 </resources>
