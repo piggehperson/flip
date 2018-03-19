@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.piggeh.flipnew.activities.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/frame_toolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/app_name" />
+        android:id="@+id/frame_appbarlayout"
+        android:background="@color/colorBackground">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/frame_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name" />
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/frame_bottomNav"
@@ -119,7 +125,7 @@
         app:layout_constraintBottom_toTopOf="@id/frame_bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/frame_appbarlayout">
 
     </FrameLayout>
 

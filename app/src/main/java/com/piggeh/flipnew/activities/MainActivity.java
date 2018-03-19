@@ -1,16 +1,20 @@
 package com.piggeh.flipnew.activities;
 
 import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.animation.StateListAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
@@ -134,6 +138,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         invalidateOptionsMenu();
+        AppBarLayout toolbar = (AppBarLayout) findViewById(R.id.frame_appbarlayout);
+        StateListAnimator animator = new StateListAnimator();
+        switch(appMode){
+            default: animator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_resting)));
+                toolbar.setStateListAnimator(animator);
+                break;
+        case 2: animator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_raised)));
+            toolbar.setStateListAnimator(animator);
+                break;
+        }
     }
 
     @Override
@@ -152,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean switchMode(int mode){
+        AppBarLayout toolbar = (AppBarLayout) findViewById(R.id.frame_appbarlayout);
+        StateListAnimator stateListAnimator;
         switch (mode){
             default: return false;
             case 0:
@@ -162,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.VISIBLE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
+                stateListAnimator = new StateListAnimator();
+                stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_resting)));
+                toolbar.setStateListAnimator(stateListAnimator);
                 invalidateOptionsMenu();
                 return true;
             case 1:
@@ -172,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.VISIBLE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.GONE);
+                stateListAnimator = new StateListAnimator();
+                stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_resting)));
+                toolbar.setStateListAnimator(stateListAnimator);
                 invalidateOptionsMenu();
                 return true;
             case 2:
@@ -182,6 +204,9 @@ public class MainActivity extends AppCompatActivity {
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_dice).setVisibility(View.GONE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_coin).setVisibility(View.GONE);
                 dynamicFab.findViewById(R.id.frame_dynamic_fab_text_list).setVisibility(View.VISIBLE);
+                stateListAnimator = new StateListAnimator();
+                stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_raised)));
+                toolbar.setStateListAnimator(stateListAnimator);
                 invalidateOptionsMenu();
                 return true;
         }
