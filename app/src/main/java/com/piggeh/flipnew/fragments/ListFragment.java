@@ -43,7 +43,7 @@ public class ListFragment extends ButtonFragment {
         recyclerView.setLayoutManager(layoutManager);
         List<String> input = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            input.add("Long long text test long long text test long long text test long long text test long long text test long long text test long long text test " + i);
+            input.add("Dummy text " + i);
         }// define an adapter
         listAdapter = new ListAdapter(input);
         recyclerView.setAdapter(listAdapter);
