@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 stateListAnimator = new StateListAnimator();
                 stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_resting)));
                 toolbar.setStateListAnimator(stateListAnimator);
+                toolbar.setBackgroundColor(getResources().getColor(R.color.colorBackground));
                 invalidateOptionsMenu();
                 return true;
             case 1:
@@ -194,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
                 stateListAnimator = new StateListAnimator();
                 stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_resting)));
                 toolbar.setStateListAnimator(stateListAnimator);
+                toolbar.setBackgroundColor(getResources().getColor(R.color.colorBackground));
                 invalidateOptionsMenu();
                 return true;
             case 2:
@@ -207,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                 stateListAnimator = new StateListAnimator();
                 stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(toolbar, "elevation", getResources().getDimension(R.dimen.toolbar_elevation_raised)));
                 toolbar.setStateListAnimator(stateListAnimator);
+                toolbar.setBackgroundColor(getResources().getColor(R.color.colorBackgroundLight));
                 invalidateOptionsMenu();
                 return true;
         }
